@@ -36,16 +36,16 @@ Gives ETA for drivers arrival
 React components with libraries listed below.
 
 ### What will you User Flow be?
-Marketing & About Page
-Sign Up & Login Page
-Dashboard (?)
-Ride Requester (User)
-Onboarding
-Driver Reviews
-Search
-Ambulance Driver
-Onboarding
-Profile
+- Marketing & About Page
+- Sign Up & Login Page
+- Dashboard (?)
+- Ride Requester (User)
+  - Onboarding
+  - Driver Reviews
+  - Search
+- Ambulance Driver
+  - Onboarding
+  - Profile
 
 # Frameworks - Libraries
 
