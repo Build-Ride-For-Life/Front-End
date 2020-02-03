@@ -1,4 +1,5 @@
 import React from 'react';
+import Home from './components/Home'
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 
       </div>
       <Switch>
+        <Route exact path ='/' component={Home} />
         <PrivateRoute path='/driver' component={DriverProfile} />
         <Route path="/userlogin" component={UserLogin} />
         <Route path="/driverlogin" component={DriverLogin} />
