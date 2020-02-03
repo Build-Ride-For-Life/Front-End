@@ -14,20 +14,20 @@ Use SAFE to Provide safe travel to health facilities.
 # Features
 
 ### What features are required for your minimum viable product?
-The app must contain two user types. A ride requester (pregnant mom, or their caregiver) and a trained motorcycle ambulance drive.
-  An on-boarding process for a new general user (user that will consume the service)
-  On-boarding process for driver (create their profile with name, location, and price)
-  Ability for driver to edit and delete their profile
-  Ability for user easily create, edit and delete driver reviews.
-  Ability for user to search for drivers based on their location and view their profile page.
+- The app must contain two user types. A ride requester (pregnant mom, or their caregiver) and a trained motorcycle ambulance drive.
+- An on-boarding process for a new general user (user that will consume the service)
+- On-boarding process for driver (create their profile with name, location, and price)
+- Ability for driver to edit and delete their profile
+- Ability for user easily create, edit and delete driver reviews.
+- Ability for user to search for drivers based on their location and view their profile page.
 	
 ### What features may you wish to put in a future release?
 Progress bar for driver
 
 ### What do the top 3 similar apps do for their users?
-Provides reviews for drivers
-Allows Address input for location to pickup and deliver
-Gives ETA for drivers arrival
+- Provides reviews for drivers
+- Allows Address input for location to pickup and deliver
+- Gives ETA for drivers arrival
 
 # Design - Planning
 
