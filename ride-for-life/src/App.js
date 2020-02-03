@@ -9,6 +9,7 @@ function App() {
       </div>
       <Switch>
         <PrivateRoute path='/driver' component={DriverProfile} />
+        <PrivateRoute path='/user' component={DriverProfile} />
         <Route path="/userlogin" component={UserLogin} />
         <Route path="/driverlogin" component={DriverLogin} />
         {/*<Route component={LoginDetails} /> /!*If no other path has been met, route to Login Description*!/*/}
