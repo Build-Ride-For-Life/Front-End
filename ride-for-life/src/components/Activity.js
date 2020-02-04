@@ -9,6 +9,7 @@ import { createDriver, createUser, getDrivers,
 
 import PrivateRoute from './PrivateRoute'
 import Home from "./Home";
+import Temp from "./Temp";
 import DriverProfile from "./DriverProfile";
 import UserDashboard from "./UserDashboard";
 import DriverLogin from "./DriverLogin";
@@ -23,7 +24,7 @@ const Activity = (props) => {
                     <PrivateRoute path='/user' component={UserDashboard} />
                     <Route path="/userlogin" component={UserLogin} />
                     <Route path="/driverlogin" component={DriverLogin} />
-                    <Route component={Home} /> {/*If no other path has been met, will default route to Home*/}
+                    <Route component={Temp} /> {/*If no other path has been met, will default route to Home*/}
                 </Switch>
             </div>
         </Router>

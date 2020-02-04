@@ -1,14 +1,16 @@
 import {useState} from "react";
 import {axiosWithAuth} from "../utils/axiosWithAuth";
+import axios from 'axios';
 import React from "react";
 
 export default function Temp(props) {
     const [credentials, setCredentials] = useState({
-        users_name: "Example User 2",
-        users_plot: "167",
-        users_phone_number: "164-1535-1256",
-        users_email: "exampleuser1@gmail.com",
-        password: "password1"
+        id: Date.now(),
+        users_name: "billy1",
+        users_plot: "195",
+        users_phone_number: "111-111-1111",
+        users_email: "billy1@example.com",
+        password: "password"
     });
 
     const url = '';
@@ -19,7 +21,7 @@ export default function Temp(props) {
             .then((res) => {
                 console.log("success:");
                 console.log(res);
-                // localStorage.setItem('token', res.data.token);
+                localStorage.setItem('token', Date.now().toString());
             })
             .catch((err) => {
                 console.log("fail:");
