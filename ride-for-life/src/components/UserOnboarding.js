@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useForm from "react-hook-form";
+import {useForm} from "react-hook-form";
 
 export default function UserOnboarding() {
 
@@ -7,7 +7,7 @@ export default function UserOnboarding() {
         name: "",
         email: "",
         password: "",
-    })
+    });
 
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
