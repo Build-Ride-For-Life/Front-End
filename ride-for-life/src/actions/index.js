@@ -44,7 +44,7 @@ export const loginDriver = (credentials) => dispatch => {
             console.log("success:");
             console.log(res);
             localStorage.setItem('token', res.data["token"]);
-            props.history.push('/protected');
+            // props.history.push('/protected');
         })
         .catch((err) => {
             console.log("fail:");
@@ -59,7 +59,7 @@ export const loginUser = (credentials) => dispatch => {
             console.log("success:");
             console.log(res);
             localStorage.setItem('token', res.data["token"]);
-            props.history.push('/protected');
+            // props.history.push('/protected');
         })
         .catch((err) => {
             console.log("fail:");
@@ -76,7 +76,8 @@ export const getDrivers = () => dispatch => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-
+            console.log("fail:");
+            console.log(err)
         })
 
 };
@@ -90,7 +91,8 @@ export const getDriver = (driverID) => dispatch => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-
+            console.log("fail:");
+            console.log(err)
         })
 };
 
@@ -103,7 +105,8 @@ export const getReviews = (driverID) => dispatch => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-
+            console.log("fail:");
+            console.log(err)
         })
 };
 
@@ -116,7 +119,8 @@ export const editDriver = (driverID) => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-
+            console.log("fail:");
+            console.log(err)
         })
 };
 
@@ -129,6 +133,7 @@ export const deleteDriver = (driverID) => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-
+            console.log("fail:");
+            console.log(err)
         })
 };

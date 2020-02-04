@@ -6,10 +6,10 @@ import React from "react";
 export default function Temp(props) {
     const [credentials, setCredentials] = useState({
         id: Date.now(),
-        users_name: "billy1",
-        users_plot: "195",
+        users_name: "abc123",
+        users_plot: "abc",
         users_phone_number: "111-111-1111",
-        users_email: "billy1@example.com",
+        users_email: "abc123@abc.com",
         password: "password"
     });
 
@@ -17,16 +17,33 @@ export default function Temp(props) {
 
     const login = e => {
         e.preventDefault();
-        axiosWithAuth().post('auth/register_user', credentials)
+        axiosWithAuth().post('auth/user_login', {
+            users_email: "abc123@abc.com",
+            password: "password"
+        })
             .then((res) => {
                 console.log("success:");
                 console.log(res);
-                localStorage.setItem('token', Date.now().toString());
+                localStorage.setItem('token', res.data["token"]);
             })
             .catch((err) => {
                 console.log("fail:");
                 console.log(err)
             });
+    };
+
+    const get = e => { //1580839393885
+        e.preventDefault();
+        axiosWithAuth().get('drivers/1/reviews')
+            .then((res) => {
+                console.log("success:");
+                console.log(res);
+                localStorage.setItem('token', res.data["token"]);
+            })
+            .catch((err) => {
+                console.log("fail:");
+                console.log(err)
+            })
     };
 
     const handleChange = e => {
@@ -75,6 +92,7 @@ export default function Temp(props) {
                     onChange={handleChange}
                 />
                 <button onClick={login}>Log in</button>
+                <button onClick={get}>Get</button>
             </form>
         </div>
     )

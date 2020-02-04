@@ -5,15 +5,17 @@ import Loader from 'react-loader-spinner';
 
 import { createDriver, createUser, getDrivers,
     getDriver, getReviews, editDriver,
-    deleteDriver } from '../actions';
+    deleteDriver } from '../../actions';
 
 import PrivateRoute from './PrivateRoute'
-import Home from "./Home";
-import Temp from "./Temp";
-import DriverProfile from "./DriverProfile";
-import UserDashboard from "./UserDashboard";
-import DriverLogin from "./DriverLogin";
-import UserLogin from "./UserLogin";
+import Home from "../general_components/Home";
+import Temp from "../Temp";
+import DriverProfile from "../driver_components/DriverProfile";
+import UserDashboard from "../user_components/UserDashboard";
+import DriverLogin from "../driver_components/DriverLogin";
+import UserLogin from "../user_components/UserLogin";
+import DriverOnboarding from "../driver_components/DriverOnboarding";
+import UserOnboarding from "../user_components/UserOnboarding";
 
 const Activity = (props) => {
     return (
@@ -24,6 +26,8 @@ const Activity = (props) => {
                     <PrivateRoute path='/user' component={UserDashboard} />
                     <Route path="/userlogin" component={UserLogin} />
                     <Route path="/driverlogin" component={DriverLogin} />
+                    <Route path="/usersignup" component={UserOnboarding} />
+                    <Route path="/driversignup" component={DriverOnboarding} />
                     <Route component={Temp} /> {/*If no other path has been met, will default route to Home*/}
                 </Switch>
             </div>

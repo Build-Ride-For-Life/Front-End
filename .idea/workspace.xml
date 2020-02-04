@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42675510-3b49-4977-9bf4-75962f05a0fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ride-for-life/src/components/driver_components/EditDriverProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ride-for-life/src/components/user_components/DriverCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ride-for-life/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/Activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/Activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/Activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/routing_components/Activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/DriverLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/DriverOnboarding.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverOnboarding.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/DriverProfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/general_components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/routing_components/PrivateRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/Temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/Temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/UserDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/user_components/UserDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/UserLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/user_components/UserLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ride-for-life/src/components/UserOnboarding.js" beforeDir="false" afterPath="$PROJECT_DIR$/ride-for-life/src/components/user_components/UserOnboarding.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +43,36 @@
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/Activity.js">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/App.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="195">
-                      <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+                    <state relative-caret-position="103">
+                      <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
                       <folding>
                         <element signature="e#0#26#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/routing_components/Activity.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state>
+                      <caret selection-end-column="26" />
+                      <folding>
+                        <element signature="e#0#26#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/general_components/Home.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="75">
+                      <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+                      <folding>
+                        <element signature="e#0#38#0" expanded="true" />
                       </folding>
                     </state>
                   </provider>
@@ -42,22 +81,10 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/Temp.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="139">
-                      <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+                    <state relative-caret-position="135">
+                      <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
                       <folding>
                         <element signature="e#0#31#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/DriverOnboarding.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="64">
-                      <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-                      <folding>
-                        <element signature="e#0#40#0" expanded="true" />
                       </folding>
                     </state>
                   </provider>
@@ -68,28 +95,80 @@
           <split-second>
             <leaf>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/ride-for-life/src/utils/axiosWithAuth.js">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverProfile.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="105">
-                      <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/UserDashboard.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="83">
-                      <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+                    <state relative-caret-position="81">
+                      <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+                      <folding>
+                        <element signature="n#!!doc" expanded="true" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/DriverProfile.js">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/EditDriverProfile.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="240">
-                      <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+                    <state relative-caret-position="120">
+                      <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+                      <folding>
+                        <element signature="n#!!doc" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewList.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="246">
+                      <caret line="30" column="26" lean-forward="true" selection-start-line="10" selection-end-line="30" selection-end-column="26" />
+                      <folding>
+                        <element signature="n#!!doc" expanded="true" />
+                        <element signature="e#10#36#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewCard.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state>
+                      <caret selection-end-line="14" selection-end-column="26" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/UserDashboard.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="144">
+                      <caret line="28" column="80" lean-forward="true" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+                      <folding>
+                        <element signature="n#!!doc" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/DriversList.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="60">
+                      <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+                      <folding>
+                        <element signature="e#0#26#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/DriverCard.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="60">
+                      <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
                     </state>
                   </provider>
                 </entry>
@@ -117,8 +196,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/ride-for-life/src/reducers/reducer.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="210">
-                      <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+                    <state relative-caret-position="21">
+                      <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
                     </state>
                   </provider>
                 </entry>
@@ -130,8 +209,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/ride-for-life/src/actions/index.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="181">
-                      <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+                    <state relative-caret-position="-249">
+                      <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
                       <folding>
                         <element signature="e#0#26#0" expanded="true" />
                       </folding>
@@ -148,9 +227,19 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.token</find>
+      <find>Login</find>
+      <find>Beer</find>
+      <find>beer</find>
+      <find>Review</find>
+      <find>review</find>
     </findStrings>
     <replaceStrings>
       <replace>[&quot;token&quot;]</replace>
+      <replace>Onboarding</replace>
+      <replace>Review</replace>
+      <replace>review</replace>
+      <replace>Driver</replace>
+      <replace>driver</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -166,18 +255,27 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ride-for-life/src/App.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/reducers/reducer.js" />
-        <option value="$PROJECT_DIR$/ride-for-life/src/components/DriverLogin.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/components/DriverOnboarding.js" />
-        <option value="$PROJECT_DIR$/ride-for-life/src/components/UserLogin.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/index.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/components/UserDashboard.js" />
-        <option value="$PROJECT_DIR$/ride-for-life/src/components/DriverProfile.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/utils/axiosWithAuth.js" />
-        <option value="$PROJECT_DIR$/ride-for-life/src/components/UserOnboarding.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/components/Home.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/UserOnboarding.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/components/Activity.js" />
-        <option value="$PROJECT_DIR$/ride-for-life/src/components/Temp.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/DriverLogin.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/UserLogin.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/DriverProfile.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/driver_components/EditDriverProfile.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewCard.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewList.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/general_components/Home.js" />
         <option value="$PROJECT_DIR$/ride-for-life/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/routing_components/Activity.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverProfile.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/Temp.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/user_components/DriversList.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/user_components/DriverCard.js" />
+        <option value="$PROJECT_DIR$/ride-for-life/src/components/user_components/UserDashboard.js" />
       </list>
     </option>
   </component>
@@ -215,13 +313,6 @@
               <item name="Front-End" type="462c0819:PsiDirectoryNode" />
               <item name="ride-for-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Front-End" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Front-End" type="462c0819:PsiDirectoryNode" />
-              <item name="ride-for-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -229,14 +320,8 @@
               <item name="Front-End" type="462c0819:PsiDirectoryNode" />
               <item name="ride-for-life" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Front-End" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Front-End" type="462c0819:PsiDirectoryNode" />
-              <item name="ride-for-life" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="user_components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -249,11 +334,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580844425461" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580850592151" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ride-for-life/src/components/parent_components" />
+      <recent name="$PROJECT_DIR$/ride-for-life/src/components/general_components" />
+      <recent name="$PROJECT_DIR$/ride-for-life/src/components/driver_components" />
+      <recent name="$PROJECT_DIR$/ride-for-life/src/components/user_components" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -277,12 +370,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580754152913</updated>
-      <workItem from="1580754154644" duration="30730000" />
+      <workItem from="1580754154644" duration="36237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30730000" />
+    <option name="totallyTimeSpent" value="36237000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,7 +472,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/PrivateRoute.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/routing_components/PrivateRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
@@ -399,53 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/UserLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/UserOnboarding.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/DriverLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ride-for-life/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -453,12 +499,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/Activity.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        <state relative-caret-position="103">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/reducers/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/UserLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverOnboarding.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/UserOnboarding.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -470,53 +563,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/DriverOnboarding.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/routing_components/Activity.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state>
+          <caret selection-end-column="26" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/DriverProfile.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/EditDriverProfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/UserDashboard.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/general_components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/DriverProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/Temp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="135">
+          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/reducers/reducer.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="246">
+          <caret line="30" column="26" lean-forward="true" selection-start-line="10" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#10#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ride-for-life/src/actions/index.js">
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/driver_components/ReviewCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+        <state>
+          <caret selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/DriverCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/DriversList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ride-for-life/src/components/user_components/UserDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="28" column="80" lean-forward="true" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
