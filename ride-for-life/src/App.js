@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Activity from "./components/Activity";
+import Activity from "./components/routing_components/Activity";
 
 function App() {
     return (

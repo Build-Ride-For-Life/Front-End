@@ -17,3 +17,18 @@ From here users can choose to either:
     - Create a User Profile page
         - Opens up a reason to use additional endpoints (e.g. user can edit reviews they gave)
  */
+
+import React from 'react';
+
+const UserDashboard = (props) => {
+
+
+
+    return (
+        <div>
+            <h2>Search for Drivers</h2> {/*Clickable --> Shows DriversList.js*/}
+        </div>
+    )
+};
+
+export default UserDashboard;

@@ -1,30 +1,49 @@
 import {useState} from "react";
 import {axiosWithAuth} from "../utils/axiosWithAuth";
+import axios from 'axios';
 import React from "react";
 
 export default function Temp(props) {
     const [credentials, setCredentials] = useState({
-        users_name: "Example User 2",
-        users_plot: "167",
-        users_phone_number: "164-1535-1256",
-        users_email: "exampleuser1@gmail.com",
-        password: "password1"
+        id: Date.now(),
+        users_name: "abc123",
+        users_plot: "abc",
+        users_phone_number: "111-111-1111",
+        users_email: "abc123@abc.com",
+        password: "password"
     });
 
     const url = '';
 
     const login = e => {
         e.preventDefault();
-        axiosWithAuth().post('auth/register_user', credentials)
+        axiosWithAuth().post('auth/user_login', {
+            users_email: "abc123@abc.com",
+            password: "password"
+        })
             .then((res) => {
                 console.log("success:");
                 console.log(res);
-                // localStorage.setItem('token', res.data.token);
+                localStorage.setItem('token', res.data["token"]);
             })
             .catch((err) => {
                 console.log("fail:");
                 console.log(err)
             });
+    };
+
+    const get = e => { //1580839393885
+        e.preventDefault();
+        axiosWithAuth().get('drivers/1/reviews')
+            .then((res) => {
+                console.log("success:");
+                console.log(res);
+                localStorage.setItem('token', res.data["token"]);
+            })
+            .catch((err) => {
+                console.log("fail:");
+                console.log(err)
+            })
     };
 
     const handleChange = e => {
@@ -73,6 +92,7 @@ export default function Temp(props) {
                     onChange={handleChange}
                 />
                 <button onClick={login}>Log in</button>
+                <button onClick={get}>Get</button>
             </form>
         </div>
     )

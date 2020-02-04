@@ -1,36 +1,28 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 
-export default function DriverLogin() {
+export default function UserLogin() {
 
-    // const [driver, setDriver] = useState({
+    // const [user, setUser] = useState({
     //     name: "",
     //     email: "",
     //     password: "",
     // })
 
-
-
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-    const handleChanges = e => {}
     const onSubmit = data => {
         console.log(data);
     };
     const validateData = async (value) => {};
 
     return (
-        <form className="DriverLogin" onSubmit={handleSubmit(onSubmit)}>
-            <h1>Driver Log in</h1>
-            <label>Name:</label>
-            <input name="drivers_name" ref={register({ required: true })} />
-            {errors.drivers_name && errors.drivers_name.type === "required" && (
-                <p>This is required</p>
-            )}
+        <form className="UserLogin" onSubmit={handleSubmit(onSubmit)}>
+            <h1>User Log in</h1>
 
             <label>Email:</label>
-            <input name="drivers_email" type="email" ref={register({ required: true })} />
-            {errors.drivers_email && errors.drivers_email.type === "required" && (
+            <input name="users_email" type="email" ref={register({ required: true })} />
+            {errors.users_email && errors.users_email.type === "required" && (
                 <p>This is required</p>
             )}
 
