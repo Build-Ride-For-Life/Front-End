@@ -28,7 +28,7 @@ const Activity = (props) => {
                     <Route path="/driverlogin" component={DriverLogin} />
                     <Route path="/usersignup" component={UserOnboarding} />
                     <Route path="/driversignup" component={DriverOnboarding} />
-                    <Route component={Temp} /> {/*If no other path has been met, will default route to Home*/}
+                    <Route component={Home} /> {/*If no other path has been met, will default route to Home*/}
                 </Switch>
             </div>
         </Router>
