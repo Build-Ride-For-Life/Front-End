@@ -6,10 +6,10 @@ import {Link} from "react-router-dom";
 export default function Home() {
     return(
         <div>
-            <Link className="main-buttons" to={"/driverlogin"}>Driver</Link>
-            <Link className="main-buttons" to={"/userlogin"}>User</Link>
-            <Link className="main-buttons" to={"/driver-signup"}>User</Link>
-            <Link className="main-buttons" to={"/user-signup"}>User</Link>
+            <Link className="main-buttons" to={"/driverlogin"}>Driver Login</Link>
+            <Link className="main-buttons" to={"/userlogin"}>User Login</Link>
+            <Link className="main-buttons" to={"/driversignup"}>Driver Signup</Link>
+            <Link className="main-buttons" to={"/usersignup"}>User Signup</Link>
         </div>
     )
 }
