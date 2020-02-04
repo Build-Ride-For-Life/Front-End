@@ -58,6 +58,7 @@ React components with libraries listed below.
 - axios: 0.19.2,
 - react-hook-form: ^4.8.1,
 - react-loader-spinner: ^3.1.5,
+- react-redux: ^7.1.3,
 - react-router-dom": ^5.1.2,
 - react-scripts: 3.3.1,
 - redux: 4.0.5,
