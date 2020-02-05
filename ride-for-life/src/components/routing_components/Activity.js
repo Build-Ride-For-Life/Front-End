@@ -4,8 +4,8 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import Loader from 'react-loader-spinner';
 
 import { createDriver, createUser, getDrivers,
-    getDriver, getReviews, editDriver,
-    deleteDriver } from '../../actions';
+    loginDriver, loginUser, getDriver,
+    getReviews, editDriver, deleteDriver } from '../../actions';
 
 import PrivateRoute from './PrivateRoute'
 import Home from "../general_components/Home";
@@ -45,7 +45,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { createDriver, createUser, getDrivers,
-        getDriver, getReviews, editDriver,
-        deleteDriver }
+    { createDriver, createUser, loginDriver,
+        loginUser, getDrivers, getDriver,
+        getReviews, editDriver, deleteDriver }
 )(Activity);

@@ -3,6 +3,8 @@ import {axiosWithAuth} from "../utils/axiosWithAuth";
 
 export const API_START = 'API_START';
 export const API_SUCCESS = 'API_SUCCESS';
+export const DRIVER_SUCCESS = 'DRIVER_SUCCESS';
+export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
 export const API_FAILURE = 'API_FAILURE';
 export const EDIT_DRIVER = 'EDIT_DRIVER';
 export const REMOVE_DRIVER = 'REMOVE_DRIVER';
@@ -37,33 +39,40 @@ export const createUser = (credentials) => dispatch => {
         });
 };
 
-export const loginDriver = (credentials) => dispatch => {
+export const loginDriver = (credentials, page) => dispatch => {
     dispatch({type: API_START});
-    axiosWithAuth().post('auth/driver_login', credentials)
-        .then((res) => {
-            console.log("success:");
+    console.log("credentials still good:", credentials);
+    axiosWithAuth().post("auth/driver_login", credentials)
+        .then(res => {
             console.log(res);
-            localStorage.setItem('token', res.data["token"]);
-            // props.history.push('/protected');
+            localStorage.setItem("token", res.data["token"]);
+            return axiosWithAuth().get(`drivers/${res.data["id"]}`) //because only id & token are returned
         })
-        .catch((err) => {
-            console.log("fail:");
-            console.log(err)
+        .then((res) => {
+            console.log(res);
+            dispatch({type: DRIVER_SUCCESS, payload: res.data}); //use id for redux state
+            return axiosWithAuth().get(`drivers/${res.data["id"]}/reviews`)
+        })
+        .then((res) => {
+            console.log(res);
+            dispatch({type: REVIEW_SUCCESS, payload: res.data}); //use id for redux state
+            page.push("/driver"); //had to be moved inside promise because it hits before the response returns otherwise
+        })
+        .catch(err => {
+            console.log(err);
         });
 };
 
-export const loginUser = (credentials) => dispatch => {
+export const loginUser = (credentials, page) => dispatch => {
     dispatch({type: API_START});
-    axiosWithAuth().post('auth/user_login', credentials)
-        .then((res) => {
-            console.log("success:");
+    axiosWithAuth().post("auth/user_login", credentials)
+        .then(res => {
             console.log(res);
-            localStorage.setItem('token', res.data["token"]);
-            // props.history.push('/protected');
+            localStorage.setItem("token", res.data["token"]);
+            page.push("/user"); //had to be moved inside promise because it hits before the response returns otherwise
         })
-        .catch((err) => {
-            console.log("fail:");
-            console.log(err)
+        .catch(err => {
+            console.log(err);
         });
 };
 
@@ -83,17 +92,7 @@ export const getDrivers = () => dispatch => {
 };
 
 export const getDriver = (driverID) => dispatch => {
-    dispatch({type: API_START});
-    axiosWithAuth().get(`drivers/${driverID}`)
-        .then((res) => {
-            console.log("success:");
-            console.log(res);
-            localStorage.setItem('token', res.data["token"]);
-        })
-        .catch((err) => {
-            console.log("fail:");
-            console.log(err)
-        })
+
 };
 
 export const getReviews = (driverID) => dispatch => {

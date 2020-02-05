@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 import { axiosWithAuth } from "../../../utils/axiosWithAuth";
+import {connect} from "react-redux";
+import {
+    createDriver,
+    createUser, deleteDriver,
+    editDriver,
+    getDriver,
+    getDrivers,
+    getReviews,
+    loginDriver,
+    loginUser
+} from "../../../actions";
 
-export default function DriverLogin(props) {
+function DriverLogin(props) {
 
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
-        axiosWithAuth().post("auth/driver_login", data)
-        .then(res => {
-            console.log(res);
-            localStorage.setItem("token", res.data["token"]);
-            //props.history will have to be passed into the action as an argument
-            props.history.push("/driver"); //had to be moved inside promise because it hits before the response returns otherwise
-
-        })
-        .catch(err => {
-            console.log(err);
-        });
+        props.loginDriver(data, props.history); //page.push()
     };
     // const validateData = async (value) => {};
 
@@ -42,3 +43,18 @@ export default function DriverLogin(props) {
         </form>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        isLoading: state.driverReducer.isLoading,
+        driver: state.driverReducer.driver,
+        error: state.driverReducer.error
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { createDriver, createUser, loginDriver,
+        loginUser, getDrivers, getDriver,
+        getReviews, editDriver, deleteDriver }
+)(DriverLogin);
