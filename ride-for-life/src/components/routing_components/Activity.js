@@ -9,7 +9,6 @@ import { createDriver, createUser, getDrivers,
 
 import PrivateRoute from './PrivateRoute'
 import Home from "../general_components/Home";
-import Temp from "../Temp";
 import DriverProfile from "../driver_components/DriverProfile";
 import UserDashboard from "../user_components/UserDashboard";
 import DriverLogin from "../driver_components/acct_entry_components/DriverLogin";

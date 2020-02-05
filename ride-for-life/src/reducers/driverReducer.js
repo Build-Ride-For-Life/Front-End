@@ -63,11 +63,15 @@ const initialState = {
 export const driverReducer = (state = initialState, action) => {
     switch (action.type) {
         case REHYDRATE:
-            return {
-                ...state,
-                driver: action.payload.driverReducer.driver,
-                reviews: action.payload.driverReducer.reviews
-            };
+            if(action.payload) {
+                return {
+                    ...state,
+                    driver: action.payload.driverReducer.driver,
+                    reviews: action.payload.driverReducer.reviews
+                };
+            } else {
+                return state;
+            }
         case API_START:
             return {
                 ...state,
@@ -85,7 +89,11 @@ export const driverReducer = (state = initialState, action) => {
                 reviews: action.payload
             };
         case API_FAILURE:
-            return state;
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            };
         case EDIT_DRIVER:
             return state;
         case REMOVE_DRIVER:
