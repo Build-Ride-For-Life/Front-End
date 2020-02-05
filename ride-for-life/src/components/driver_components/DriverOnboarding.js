@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
-import {axiosWithAuth} from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 export default function DriverOnboarding(props) {
 
@@ -14,10 +14,14 @@ export default function DriverOnboarding(props) {
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
-        axiosWithAuth().post("")
-            .then(res => {})
-            .catch(err => {});
-        props.history.push('/driver');
+        axiosWithAuth().post("auth/register_driver", data)
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        props.history.push("/driverlogin");
     };
     const validateData = async (value) => {};
 

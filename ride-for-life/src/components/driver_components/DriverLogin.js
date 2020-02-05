@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
-import {axiosWithAuth} from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 export default function DriverLogin(props) {
 
@@ -17,10 +17,15 @@ export default function DriverLogin(props) {
     const handleChanges = e => {}
     const onSubmit = data => {
         console.log(data);
-        axiosWithAuth().post("")
-            .then(res => {})
-            .catch(err => {});
-        props.history.push('/driver');
+        axiosWithAuth().post("auth/driver_login", data)
+        .then(res => {
+            console.log(res);
+            localStorage.setItem("token", res.data["token"]);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        props.history.push("/driver");
     };
     const validateData = async (value) => {};
 
