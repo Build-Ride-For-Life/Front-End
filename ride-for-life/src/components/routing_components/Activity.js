@@ -16,6 +16,7 @@ import DriverLogin from "../driver_components/acct_entry_components/DriverLogin"
 import UserLogin from "../user_components/acct_entry_components/UserLogin";
 import DriverOnboarding from "../driver_components/acct_entry_components/DriverOnboarding";
 import UserOnboarding from "../user_components/acct_entry_components/UserOnboarding";
+import EditDriverProfile from "../driver_components/EditDriverProfile"
 
 const Activity = (props) => {
     return (
@@ -28,6 +29,7 @@ const Activity = (props) => {
                     <Route path="/driverlogin" component={DriverLogin} />
                     <Route path="/usersignup" component={UserOnboarding} />
                     <Route path="/driversignup" component={DriverOnboarding} />
+                    <Route path="/driveredit" component={EditDriverProfile} />
                     <Route component={Home} /> {/*If no other path has been met, will default route to Home*/}
                 </Switch>
             </div>
