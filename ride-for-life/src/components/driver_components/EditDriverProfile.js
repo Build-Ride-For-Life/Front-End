@@ -1,3 +1,5 @@
+import React from "react";
+import {useForm} from "react-hook-form";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import {
@@ -20,13 +22,30 @@ From here drivers can choose to:
     - Endpoint: /api/drivers/:id
 */
 
-function EditDriverProfile() {
+function EditDriverProfile(props) {
     
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
+        console.log(props)
+        axiosWithAuth().put(`drivers/${props.driver.id}`, {drivers_name: "Success"})
+        .then(res => {
+            console.log(res);
+             
+        })
+        .catch(err => {
+            console.log(err);
+        })
     };
+    const deleteDriver = () => {
+        axiosWithAuth().delete(`drivers/${props.driver.id}`)
+        .then(res => {
+            console.log(res);
+             
+        })
+    }
+
     const validateData = async (value) => {};
 
     return (
@@ -50,7 +69,8 @@ function EditDriverProfile() {
             <label>Password:</label>
             <input name="password" type="password" ref={register} />
             
-            <button type="submit">Submit</button>
+            <button type="submit">Update Profile</button>
+            <button onClick={() => deleteDriver}>Delete Profile</button>
         </form>
     )
 }
@@ -59,6 +79,7 @@ const mapStateToProps = state => {
     return {
         isLoading: state.driverReducer.isLoading,
         driver: state.driverReducer.driver,
+        reviews: state.driverReducer.reviews,
         error: state.driverReducer.error
     };
 };

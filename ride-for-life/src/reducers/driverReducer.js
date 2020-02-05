@@ -63,7 +63,7 @@ const initialState = {
 export const driverReducer = (state = initialState, action) => {
     switch (action.type) {
         case REHYDRATE:
-            if(action.payload) {
+            if (action.payload) {
                 return {
                     ...state,
                     driver: action.payload.driverReducer.driver,
