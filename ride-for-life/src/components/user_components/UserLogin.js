@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
+import {axiosWithAuth} from "../../utils/axiosWithAuth";
 
-export default function UserLogin() {
+export default function UserLogin(props) {
 
     // const [user, setUser] = useState({
     //     name: "",
@@ -13,6 +14,11 @@ export default function UserLogin() {
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
+        axiosWithAuth().post("")
+            .then(res => {})
+            .catch(err => {});
+        props.history.push('/user');
+
     };
     const validateData = async (value) => {};
 

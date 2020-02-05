@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
+import {axiosWithAuth} from "../../utils/axiosWithAuth";
 
-export default function DriverOnboarding() {
+export default function DriverOnboarding(props) {
 
     // const [newDriver, setNewDriver] = useState({
     //     name: "",
@@ -13,6 +14,10 @@ export default function DriverOnboarding() {
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
+        axiosWithAuth().post("")
+            .then(res => {})
+            .catch(err => {});
+        props.history.push('/driver');
     };
     const validateData = async (value) => {};
 
