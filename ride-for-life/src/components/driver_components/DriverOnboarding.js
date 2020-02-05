@@ -17,7 +17,7 @@ export default function DriverOnboarding(props) {
             console.log(err);
         });
     };
-    const validateData = async (value) => {};
+    // const validateData = async (value) => {};
 
     return (
         <form className="DriverSignUp" onSubmit={handleSubmit(onSubmit)}>

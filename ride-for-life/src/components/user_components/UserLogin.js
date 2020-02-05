@@ -8,14 +8,10 @@ export default function UserLogin(props) {
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
-        // console.log("login start:");
-        // console.log(localStorage.getItem("token"));
         axiosWithAuth().post("auth/user_login", data)
         .then(res => {
             console.log(res);
             localStorage.setItem("token", res.data["token"]);
-            // console.log("login complete:");
-            // console.log(localStorage.getItem("token"));
             props.history.push("/user"); //had to be moved inside promise because it hits before the response returns otherwise
         })
         .catch(err => {
