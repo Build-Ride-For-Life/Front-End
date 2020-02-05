@@ -3,8 +3,7 @@ import {useForm} from "react-hook-form";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import {
-    createDriver,
-    createUser, deleteDriver,
+    deleteDriver,
     editDriver,
     getDriver,
     getDrivers,
@@ -30,7 +29,7 @@ function EditDriverProfile(props) {
     const onSubmit = data => {
         console.log(data);
         console.log(props)
-        axiosWithAuth().put(`drivers/${props.driver.id}`, {drivers_name: "George"})
+        axiosWithAuth().put(`drivers/${props.driver.id}`, {drivers_name: "Success"})
         .then(res => {
             console.log(res);
              
@@ -87,7 +86,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { createDriver, createUser, loginDriver,
+    { loginDriver,
         loginUser, getDrivers, getDriver,
         getReviews, editDriver, deleteDriver }
 )(EditDriverProfile);

@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//redux
 import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+//middleware
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+//persistence
 import { persistStore, persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from "redux-persist/integration/react";
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+//custom
 import rootReducer from './reducers';
 import App from './App';
 import './index.css';

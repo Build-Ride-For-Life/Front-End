@@ -13,8 +13,7 @@ import React, {useState} from 'react';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import {
-    createDriver,
-    createUser, deleteDriver,
+    deleteDriver,
     editDriver,
     getDriver,
     getDrivers,
@@ -75,7 +74,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { createDriver, createUser, loginDriver,
+    {  loginDriver,
         loginUser, getDrivers, getDriver,
         getReviews, editDriver, deleteDriver }
 )(DriverProfile);

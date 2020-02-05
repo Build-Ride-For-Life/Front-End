@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import Loader from 'react-loader-spinner';
 
-import { createDriver, createUser, getDrivers,
+import { getDrivers,
     loginDriver, loginUser, getDriver,
     getReviews, editDriver, deleteDriver } from '../../actions';
 
 import PrivateRoute from './PrivateRoute'
 import Home from "../general_components/Home";
-import Temp from "../Temp";
 import DriverProfile from "../driver_components/DriverProfile";
 import UserDashboard from "../user_components/UserDashboard";
 import DriverLogin from "../driver_components/acct_entry_components/DriverLogin";
@@ -47,7 +46,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { createDriver, createUser, loginDriver,
+    {  loginDriver,
         loginUser, getDrivers, getDriver,
         getReviews, editDriver, deleteDriver }
 )(Activity);

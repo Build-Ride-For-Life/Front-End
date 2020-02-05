@@ -9,36 +9,6 @@ export const API_FAILURE = 'API_FAILURE';
 export const EDIT_DRIVER = 'EDIT_DRIVER';
 export const REMOVE_DRIVER = 'REMOVE_DRIVER';
 
-export const createDriver = (credentials) => dispatch => {
-    dispatch({type: API_START});
-    axiosWithAuth().post('auth/register_driver', credentials)
-        .then((res) => {
-            console.log("success:");
-            console.log(res);
-            localStorage.setItem('token', Date.now().toString());
-            dispatch({type: API_SUCCESS, payload: res.data});
-        })
-        .catch((err) => {
-            console.log("fail:");
-            console.log(err)
-        });
-};
-
-export const createUser = (credentials) => dispatch => {
-    dispatch({type: API_START});
-    axiosWithAuth().post('auth/register_user', credentials)
-        .then((res) => {
-            console.log("success:");
-            console.log(res);
-            localStorage.setItem('token', Date.now().toString());
-            dispatch({type: API_SUCCESS, payload: res.data});
-        })
-        .catch((err) => {
-            console.log("fail:");
-            console.log(err)
-        });
-};
-
 export const loginDriver = (credentials, page) => dispatch => {
     dispatch({type: API_START});
     console.log("credentials still good:", credentials);
@@ -59,7 +29,7 @@ export const loginDriver = (credentials, page) => dispatch => {
             page.push("/driver"); //had to be moved inside promise because it hits before the response returns otherwise
         })
         .catch(err => {
-            console.log(err);
+            dispatch({ type: API_FAILURE, payload: err.response });
         });
 };
 
@@ -72,7 +42,7 @@ export const loginUser = (credentials, page) => dispatch => {
             page.push("/user"); //had to be moved inside promise because it hits before the response returns otherwise
         })
         .catch(err => {
-            console.log(err);
+            dispatch({ type: API_FAILURE, payload: err.response });
         });
 };
 
@@ -85,8 +55,7 @@ export const getDrivers = () => dispatch => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-            console.log("fail:");
-            console.log(err)
+            dispatch({ type: API_FAILURE, payload: err.response });
         })
 
 };
@@ -104,8 +73,7 @@ export const getReviews = (driverID) => dispatch => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-            console.log("fail:");
-            console.log(err)
+            dispatch({ type: API_FAILURE, payload: err.response });
         })
 };
 
@@ -118,8 +86,7 @@ export const editDriver = (driverID) => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-            console.log("fail:");
-            console.log(err)
+            // dispatch({ type: API_FAILURE, payload: err.response });
         })
 };
 
@@ -132,7 +99,6 @@ export const deleteDriver = (driverID) => {
             localStorage.setItem('token', res.data["token"]);
         })
         .catch((err) => {
-            console.log("fail:");
-            console.log(err)
+            // dispatch({ type: API_FAILURE, payload: err.response });
         })
 };
