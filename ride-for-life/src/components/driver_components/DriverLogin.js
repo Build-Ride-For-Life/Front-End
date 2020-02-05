@@ -4,30 +4,21 @@ import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 export default function DriverLogin(props) {
 
-    // const [driver, setDriver] = useState({
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    // })
-
-
-
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-    const handleChanges = e => {}
     const onSubmit = data => {
         console.log(data);
         axiosWithAuth().post("auth/driver_login", data)
         .then(res => {
             console.log(res);
             localStorage.setItem("token", res.data["token"]);
+            props.history.push("/driver"); //had to be moved inside promise because it hits before the response returns otherwise
         })
         .catch(err => {
             console.log(err);
-        })
-        props.history.push("/driver");
+        });
     };
-    const validateData = async (value) => {};
+    // const validateData = async (value) => {};
 
     return (
         <form className="DriverLogin" onSubmit={handleSubmit(onSubmit)}>

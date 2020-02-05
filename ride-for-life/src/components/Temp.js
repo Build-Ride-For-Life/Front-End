@@ -18,8 +18,8 @@ export default function Temp(props) {
     const login = e => {
         e.preventDefault();
         axiosWithAuth().post('auth/user_login', {
-            users_email: "abc123@abc.com",
-            password: "password"
+            users_email: "Dr@dr.com",
+            password: "Karl"
         })
             .then((res) => {
                 console.log("success:");
@@ -34,7 +34,7 @@ export default function Temp(props) {
 
     const get = e => { //1580839393885
         e.preventDefault();
-        axiosWithAuth().get('drivers/1/reviews')
+        axiosWithAuth().get('drivers')
             .then((res) => {
                 console.log("success:");
                 console.log(res);

@@ -4,12 +4,6 @@ import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 export default function DriverOnboarding(props) {
 
-    // const [newDriver, setNewDriver] = useState({
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    // })
-
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
@@ -17,11 +11,11 @@ export default function DriverOnboarding(props) {
         axiosWithAuth().post("auth/register_driver", data)
         .then(res => {
             console.log(res);
+            props.history.push("/driverlogin"); //only move to log in if the API call is successful
         })
         .catch(err => {
             console.log(err);
-        })
-        props.history.push("/driverlogin");
+        });
     };
     const validateData = async (value) => {};
 
