@@ -12,7 +12,7 @@ From here drivers can choose to:
 
 export default function EditDriverProfile() {
     
-        const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);

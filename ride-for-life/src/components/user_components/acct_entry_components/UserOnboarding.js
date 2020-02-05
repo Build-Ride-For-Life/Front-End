@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../../../utils/axiosWithAuth";
 
 export default function UserOnboarding(props) {
-
-    // const [newUser, setNewUser] = useState({
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    // });
 
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -17,11 +11,11 @@ export default function UserOnboarding(props) {
         axiosWithAuth().post("auth/register_user", data)
         .then(res => {
             console.log(res);
+            props.history.push("/userlogin"); //only move to log in if the API call is successful
         })
         .catch(err => {
             console.log(err);
-        })
-        props.history.push("/userlogin");
+        });
     };
     const validateData = async (value) => {};
 

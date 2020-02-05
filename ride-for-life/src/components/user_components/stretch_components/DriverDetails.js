@@ -1,0 +1,1 @@
+/* Same as driver_components/DriverDetails.js without the edit and logout buttons. */

@@ -1,30 +1,27 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../../../utils/axiosWithAuth";
+import {connect} from "react-redux";
+import {
+    createDriver,
+    createUser, deleteDriver,
+    editDriver,
+    getDriver,
+    getDrivers,
+    getReviews,
+    loginDriver,
+    loginUser
+} from "../../../actions";
 
-export default function UserLogin(props) {
-
-    // const [user, setUser] = useState({
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    // })
+function UserLogin(props) {
 
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
-        axiosWithAuth().post("auth/user_login", data)
-        .then(res => {
-            console.log(res);
-            localStorage.setItem("token", res.data["token"]);
-        })
-        .catch(err => {
-            console.log(err);
-        })
-        props.history.push("/user");
+        props.loginUser(data, props.history); //page.push()
     };
-    const validateData = async (value) => {};
+    // const validateData = async (value) => {};
 
     return (
         <form className="UserLogin" onSubmit={handleSubmit(onSubmit)}>
@@ -46,3 +43,18 @@ export default function UserLogin(props) {
         </form>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        isLoading: state.driversReducer.isLoading,
+        drivers: state.driversReducer.drivers,
+        error: state.driversReducer.error
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { createDriver, createUser, loginDriver,
+        loginUser, getDrivers, getDriver,
+        getReviews, editDriver, deleteDriver }
+)(UserLogin);

@@ -22,11 +22,15 @@ import React from 'react';
 
 const UserDashboard = (props) => {
 
-
+    const logout = () => {
+        localStorage.removeItem("token");
+        props.history.push("/userlogin");
+    };
 
     return (
         <div>
             <h2>Search for Drivers</h2> {/*Clickable --> Shows DriversList.js*/}
+            <button onClick={logout}>Logout</button>
         </div>
     )
 };
