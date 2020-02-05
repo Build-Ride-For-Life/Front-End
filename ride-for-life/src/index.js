@@ -14,14 +14,16 @@ import './index.css';
 //configureStore
 const persistConfig = {
     key: 'root',
-    storage
+    storage,
+    // whitelist: ['driver']
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = createStore(persistedReducer, applyMiddleware(thunk, logger));
 const persistor = persistStore(store);
 
-export default {store, persistor};
+// export default {store, persistor};
 
 
 ReactDOM.render(

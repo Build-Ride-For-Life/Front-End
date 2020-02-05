@@ -65,8 +65,8 @@ export const driverReducer = (state = initialState, action) => {
         case REHYDRATE:
             return {
                 ...state,
-                driver: action.payload.driver,
-                reviews: action.payload.reviews
+                driver: action.payload.driverReducer.driver,
+                reviews: action.payload.driverReducer.reviews
             };
         case API_START:
             return {
