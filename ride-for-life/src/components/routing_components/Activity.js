@@ -12,10 +12,10 @@ import Home from "../general_components/Home";
 import Temp from "../Temp";
 import DriverProfile from "../driver_components/DriverProfile";
 import UserDashboard from "../user_components/UserDashboard";
-import DriverLogin from "../driver_components/DriverLogin";
-import UserLogin from "../user_components/UserLogin";
-import DriverOnboarding from "../driver_components/DriverOnboarding";
-import UserOnboarding from "../user_components/UserOnboarding";
+import DriverLogin from "../driver_components/acct_entry_components/DriverLogin";
+import UserLogin from "../user_components/acct_entry_components/UserLogin";
+import DriverOnboarding from "../driver_components/acct_entry_components/DriverOnboarding";
+import UserOnboarding from "../user_components/acct_entry_components/UserOnboarding";
 
 const Activity = (props) => {
     return (

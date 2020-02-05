@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../../../utils/axiosWithAuth";
 
 export default function DriverOnboarding(props) {
 

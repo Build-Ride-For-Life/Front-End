@@ -9,10 +9,12 @@ From here drivers can choose to:
 - View (GET) all of their reviews
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
 
 const DriverProfile = (props) => {
+
+
 
     const method = () => {
         axiosWithAuth().get('drivers')
@@ -25,12 +27,14 @@ const DriverProfile = (props) => {
                 console.log("get fail:");
                 console.log(err)
             });
-    }
+    };
 
     const logout = () => {
         localStorage.removeItem("token");
         props.history.push("/driverlogin");
     };
+
+    const [] = useState();
 
     return (
         <div>
