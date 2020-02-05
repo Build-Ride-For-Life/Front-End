@@ -44,7 +44,7 @@ function DriverLogin(props) {
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         isLoading: state.driverReducer.isLoading,
         driver: state.driverReducer.driver,

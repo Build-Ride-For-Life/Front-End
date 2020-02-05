@@ -1,7 +1,11 @@
 import {API_START, API_SUCCESS, DRIVER_SUCCESS,
     REVIEW_SUCCESS, API_FAILURE, EDIT_DRIVER, REMOVE_DRIVER } from "../actions";
+import { REHYDRATE } from 'redux-persist';
 
 // api/drivers
+
+//make a version of initialState that takes data from localStorage
+
 const initialState = {
     isLoading: false,
     driver: {
@@ -58,6 +62,12 @@ const initialState = {
 
 export const driverReducer = (state = initialState, action) => {
     switch (action.type) {
+        case REHYDRATE:
+            return {
+                ...state,
+                driver: action.payload.driverReducer.driver,
+                reviews: action.payload.driverReducer.reviews
+            };
         case API_START:
             return {
                 ...state,
