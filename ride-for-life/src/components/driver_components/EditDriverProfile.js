@@ -1,4 +1,15 @@
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import {connect} from "react-redux";
+import {
+    createDriver,
+    createUser, deleteDriver,
+    editDriver,
+    getDriver,
+    getDrivers,
+    getReviews,
+    loginDriver,
+    loginUser
+} from "../../actions";
 
 /*
 PROTECTED ROUTE
@@ -10,7 +21,7 @@ From here drivers can choose to:
     - Endpoint: /api/drivers/:id
 */
 
-export default function EditDriverProfile() {
+function EditDriverProfile() {
     
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -44,3 +55,18 @@ export default function EditDriverProfile() {
         </form>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        isLoading: state.driverReducer.isLoading,
+        driver: state.driverReducer.driver,
+        error: state.driverReducer.error
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { createDriver, createUser, loginDriver,
+        loginUser, getDrivers, getDriver,
+        getReviews, editDriver, deleteDriver }
+)(EditDriverProfile);
