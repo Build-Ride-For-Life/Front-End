@@ -33,7 +33,7 @@ export default function DriverOnboarding(props) {
     return (
         <div>
             <Navigation />
-            <DriverForm className="DriverSignUp" onSubmit={handleSubmit(onSubmit)}>
+            <DriverForm className="DriverSignUp" style={{border: `3px solid`}} onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <h1 style={{margin: `0% 0% 5%`, border: `3px solid`}}>New Driver Sign Up</h1>
                 </div>
@@ -54,7 +54,7 @@ export default function DriverOnboarding(props) {
                         <p>This is required</p>
                     )}
 
-                    <input name="drivers_plot" type="text" placeholder="Price" style={{margin:`0% 0% 0% 10%`, padding:`0% 0% 0% 8%`, border:`3px solid`}} ref={register({ required: true })} />
+                    <input name="drivers_plot" type="text" placeholder="Address" style={{margin:`0% 0% 0% 10%`, padding:`0% 0% 0% 8%`, border:`3px solid`}} ref={register({ required: true })} />
                     {errors.drivers_plot && errors.drivers_plot.type === "required" && (
                         <p>This is required</p>
                     )}

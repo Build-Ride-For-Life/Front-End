@@ -35,7 +35,7 @@ function DriverLogin(props) {
 
     return (
         <div>
-            <DriverForm className="DriverLogin" onSubmit={handleSubmit(onSubmit)}>
+            <DriverForm className="DriverLogin" style={{border: `3px solid`}} onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <h1 style={{margin: `0% 0% 5%`, border: `3px solid`}}>Driver Log in</h1>
                 </div>
