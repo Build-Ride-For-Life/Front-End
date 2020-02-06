@@ -1,4 +1,4 @@
-import {API_START, API_SUCCESS, API_FAILURE, EDIT_DRIVER, REMOVE_DRIVER } from "../actions";
+import {API_START, API_SUCCESS, API_FAILURE, REMOVE_DRIVER } from "../actions";
 // api/drivers/:id
 const initialState = {
     isLoading: false,
@@ -48,8 +48,6 @@ export const driversReducer = (state = initialState, action) => {
         case API_SUCCESS:
             return state;
         case API_FAILURE:
-            return state;
-        case EDIT_DRIVER:
             return state;
         case REMOVE_DRIVER:
             return state;

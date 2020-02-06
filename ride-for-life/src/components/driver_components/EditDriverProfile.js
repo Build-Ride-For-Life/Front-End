@@ -2,15 +2,7 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
-import {
-    deleteDriver,
-    editDriver,
-    getDriver,
-    getDrivers,
-    getReviews,
-    loginDriver,
-    loginUser
-} from "../../actions";
+import { deleteDriver, editDriver } from "../../actions";
 import {Link} from "react-router-dom";
 
 /*
@@ -33,23 +25,11 @@ function EditDriverProfile(props) {
     const onSubmit = data => {
         console.log(data);
         localStorage.setItem("token", props.token);
-        axiosWithAuth().put(`drivers/${props.driver.id}`, data)
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err => {
-            console.log(err);
-        })
+        props.editDriver(props.driver.id, data)
     };
     const deleteDriver = () => {
         localStorage.setItem("token", props.token);
-        axiosWithAuth().delete(`drivers/${props.driver.id}`)
-        .then(res => {
-            console.log("deleted:", res);
-            localStorage.clear();
-            console.log(localStorage.getItem('token'));
-            props.history.push("/driverlogin");
-        })
+        props.deleteDriver(props.driver.id, props.history);
     };
 
     const validateData = async (value) => {};
@@ -96,7 +76,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { loginDriver,
-        loginUser, getDrivers, getDriver,
-        getReviews, editDriver, deleteDriver }
+    { editDriver, deleteDriver }
 )(EditDriverProfile);
