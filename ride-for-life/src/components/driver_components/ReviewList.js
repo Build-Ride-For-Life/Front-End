@@ -20,7 +20,7 @@ const ReviewList = props => {
             {props.reviews.length ? ( //greater than 0? [0 = falsy]
                 <div className="limited-row">
                     {props.reviews.map(item => (
-                        <ReviewCard key={item.id} review={item} dispatch={props.dispatch} />
+                        <ReviewCard key={item.id} review={item} />
                     ))}
                 </div>
             ) : (

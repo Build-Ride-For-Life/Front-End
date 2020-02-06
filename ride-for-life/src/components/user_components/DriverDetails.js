@@ -29,7 +29,9 @@ const DriverDetails = (props) => {
     const {drivers_name, drivers_plot, drivers_phone_number,
         drivers_email, drivers_price, about_me} = props.drivers.filter(driver => driver['id'].toString() === props.match.params.id)[0];
 
-    const [] = useState();
+    /*const newReview = () => {
+        props.history.push("/userlogin");
+    };*/
 
     return (
         <div>
@@ -37,7 +39,7 @@ const DriverDetails = (props) => {
             <h5>Location: {drivers_plot}</h5> <h5>Address: {drivers_price}</h5>
             <h5>Phone: {drivers_phone_number}</h5> <h5>Email: {drivers_email}</h5>
             <h5>About Me: {about_me}</h5>
-            <Link to={`newreview/${props.match.params.id}`}><h4>Leave {drivers_name} a Review</h4></Link>
+            <Link to={`/newreview/${props.match.params.id}`}><h4>Leave {drivers_name} a Review</h4></Link>
         </div>
     )
 };

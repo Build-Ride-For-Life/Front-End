@@ -37,7 +37,7 @@ const UserDashboard = (props) => {
     return (
         <div>
             <button onClick={getDrivers}>Search for Drivers</button> {/*Clickable --> Shows DriversList.js*/}
-            <Link to="userreviews"><h5>Your Review(s)</h5></Link> {/*h5 -> Clickable*/}
+            <Link to="/userreviews"><h5>Your Review(s)</h5></Link> {/*h5 -> Clickable*/}
             <button onClick={logout}>Logout</button>
         </div>
     )

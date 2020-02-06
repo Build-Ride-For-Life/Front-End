@@ -12,7 +12,7 @@ function NewReview(props) {
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
-        let date = new Date("Sun May 11,2014");
+        let date = new Date();
         let dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000 ))
             .toISOString()
             .split("T")[0];
@@ -30,14 +30,14 @@ function NewReview(props) {
 
     return (
         <div>
-            <form className="ReviewEdit" onSubmit={handleSubmit(onSubmit)}>
-                <h1>Edit Review</h1>
+            <form className="ReviewCreate" onSubmit={handleSubmit(onSubmit)}>
+                <h1>New Review</h1>
 
                 <label>Rating (1-5):</label>
-                <input name="rating" type="number" ref={register({ required: false })} />
+                <input name="rating" type="number" ref={register({ required: true })} />
 
                 <label>Review:</label>
-                <input name="review_text" type="text" ref={register({ required: false })} />
+                <input name="review_text" type="text" ref={register({ required: true })} />
 
                 <button type="submit">Submit Review</button>
             </form>

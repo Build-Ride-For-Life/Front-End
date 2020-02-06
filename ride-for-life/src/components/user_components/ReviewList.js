@@ -10,7 +10,7 @@ const ReviewList = props => {
             {props.reviews.length ? ( //greater than 0? [0 = falsy]
                 <div className="limited-row">
                     {props.reviews.map(item => (
-                        <ReviewCard key={item.id} review={item} dispatch={props.dispatch} />
+                        <ReviewCard key={item.id} review={item} history={props.history} />
                     ))}
                 </div>
             ) : (
@@ -23,10 +23,10 @@ const ReviewList = props => {
 const mapStateToProps = state => {
     return {
         isLoading: state.driversReducer.isLoading,
-        driver: state.driversReducer.driver,
+        drivers: state.driversReducer.drivers,
         reviews: state.driversReducer.reviews,
         // token: state.driverReducer.token,
-        error: state.driverReducer.error
+        error: state.driversReducer.error
     };
 };
 

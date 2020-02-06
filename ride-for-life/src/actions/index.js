@@ -100,7 +100,7 @@ export const getDrivers = (page) => dispatch => {
 
 export const createReview = (data, page) => dispatch => {
     dispatch({type: API_START});
-    axiosWithAuth().post('api/reviews', data)
+    axiosWithAuth().post('reviews', data)
         .then((res) => {
             dispatch({type: NEW_REVIEW_SUCCESS, payload: res.data });
             page.push("/driverslist");

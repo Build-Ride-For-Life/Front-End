@@ -96,6 +96,7 @@ export const driversReducer = (state = initialState, action) => {
             if (action.payload) {
                 return {
                     ...state,
+                    user: action.payload.driversReducer.user,
                     drivers: action.payload.driversReducer.drivers,
                     reviews: action.payload.driversReducer.reviews,
                     // token: action.payload.driversReducer.token

@@ -30,10 +30,10 @@ function EditReview(props) {
                 <h1>Edit Review</h1>
 
                 <label>Rating (1-5):</label>
-                <input name="rating" defaultValue={rating} type="number" ref={register({ required: false })} />
+                <input name="rating" defaultValue={rating} type="number" ref={register({ required: true })} />
 
                 <label>Review:</label>
-                <input name="review_text" defaultValue={review_text} type="text" ref={register({ required: false })} />
+                <input name="review_text" defaultValue={review_text} type="text" ref={register({ required: true })} />
 
                 <button type="submit">Edit Review</button>
             </form>
