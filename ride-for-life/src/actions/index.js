@@ -5,7 +5,11 @@ export const API_START = 'API_START';
 export const API_SUCCESS = 'API_SUCCESS';
 export const TOKEN_SUCCESS = 'TOKEN_SUCCESS';
 export const DRIVER_SUCCESS = 'DRIVER_SUCCESS';
+export const USER_SUCCESS = 'USER_SUCCESS';
 export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
+export const NEW_REVIEW_SUCCESS = 'NEW_REVIEW_SUCCESS';
+export const EDIT_REVIEW_SUCCESS = 'EDIT_REVIEW_SUCCESS';
+export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const API_FAILURE = 'API_FAILURE';
 
 export const loginDriver = (credentials, page) => dispatch => {
@@ -15,7 +19,7 @@ export const loginDriver = (credentials, page) => dispatch => {
         .then(res => {
             console.log(res);
             localStorage.setItem("token", res.data["token"]);
-            dispatch({type: TOKEN_SUCCESS, payload: res.data["token"]})
+            // dispatch({type: TOKEN_SUCCESS, payload: res.data["token"]})
             return axiosWithAuth().get(`drivers/${res.data["id"]}`) //because only id & token are returned
         })
         .then((res) => {
@@ -26,7 +30,7 @@ export const loginDriver = (credentials, page) => dispatch => {
         .then((res) => {
             console.log(res);
             dispatch({type: REVIEW_SUCCESS, payload: res.data}); //use id for redux state
-            page.push("/driver"); //had to be moved inside promise because it hits before the response returns otherwise
+            page.push("/driver");
         })
         .catch(err => {
             dispatch({ type: API_FAILURE, payload: err.response });
@@ -65,7 +69,17 @@ export const loginUser = (credentials, page) => dispatch => {
         .then(res => {
             console.log(res);
             localStorage.setItem("token", res.data["token"]);
-            page.push("/user"); //had to be moved inside promise because it hits before the response returns otherwise
+            return axiosWithAuth().get(`users/${res.data["id"]}`);
+        })
+        .then((res) => {
+            console.log(res);
+            dispatch({type: USER_SUCCESS, payload: res.data}); //use id for redux state
+            return axiosWithAuth().get(`users/${res.data["id"]}/reviews`)
+        })
+        .then(res => {
+            console.log(res);
+            dispatch({type: REVIEW_SUCCESS, payload: res.data});
+            page.push("/user");
         })
         .catch(err => {
             dispatch({ type: API_FAILURE, payload: err.response });
@@ -84,19 +98,35 @@ export const getDrivers = (page) => dispatch => {
         })
 };
 
-export const getDriver = (driverID) => dispatch => {
-
+export const createReview = (data, page) => dispatch => {
+    dispatch({type: API_START});
+    axiosWithAuth().post('reviews', data)
+        .then((res) => {
+            dispatch({type: NEW_REVIEW_SUCCESS, payload: res.data });
+            page.push("/driverslist");
+        })
 };
 
-export const getReviews = (driverID) => dispatch => {
+export const editReview = (reviewID, updatedData) => dispatch => {
     dispatch({type: API_START});
-    axiosWithAuth().get(`drivers/${driverID}/reviews`)
-        .then((res) => {
-            console.log("success:");
+    axiosWithAuth().put(`reviews/${reviewID}`, updatedData)
+        .then(res => {
             console.log(res);
-            localStorage.setItem('token', res.data["token"]);
+            dispatch({ type: EDIT_REVIEW_SUCCESS, payload: res.data });
         })
-        .catch((err) => {
+        .catch(err => {
+            dispatch({ type: API_FAILURE, payload: err.response });
+        })
+};
+
+export const deleteReview = (reviewID, page) => dispatch => {
+    dispatch({type: API_START});
+    axiosWithAuth().delete(`reviews/${reviewID}`)
+        .then(res => {
+            dispatch({ type: REMOVE_REVIEW, payload: reviewID });
+            page.push("/userreviews");
+        })
+        .catch(err => {
             dispatch({ type: API_FAILURE, payload: err.response });
         })
 };

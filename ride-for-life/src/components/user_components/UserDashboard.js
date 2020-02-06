@@ -21,7 +21,7 @@ From here users can choose to either:
 import React from 'react';
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
-import {deleteDriver, editDriver, getDriver, getDrivers, getReviews, loginDriver, loginUser} from "../../actions";
+import {deleteDriver, editDriver, getDrivers, loginDriver, loginUser} from "../../actions";
 
 const UserDashboard = (props) => {
 
@@ -37,6 +37,7 @@ const UserDashboard = (props) => {
     return (
         <div>
             <button onClick={getDrivers}>Search for Drivers</button> {/*Clickable --> Shows DriversList.js*/}
+            <Link to="/userreviews"><h5>Your Review(s)</h5></Link> {/*h5 -> Clickable*/}
             <button onClick={logout}>Logout</button>
         </div>
     )
@@ -46,7 +47,7 @@ const mapStateToProps = (state) => {
     return {
         isLoading: state.driversReducer.isLoading,
         drivers: state.driversReducer.drivers,
-        token: state.driversReducer.token,
+        reviews: state.driversReducer.reviews,
         error: state.driversReducer.error
     };
 };
@@ -54,6 +55,5 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps,
     {  loginDriver,
-        loginUser, getDrivers, getDriver,
-        getReviews, editDriver, deleteDriver }
+        loginUser, getDrivers, editDriver, deleteDriver }
 )(UserDashboard);

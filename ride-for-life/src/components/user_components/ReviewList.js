@@ -1,36 +1,36 @@
 import React from 'react';
 
-import DriverCard from './DriverCard';
+import ReviewCard from './ReviewCard';
 import {connect} from "react-redux";
 import {deleteDriver, editDriver, getDrivers, loginDriver, loginUser} from "../../actions";
 
-const DriverList = props => {
+const ReviewList = props => {
     return (
         <div className="container">
-            {props.drivers.length ? ( //greater than 0? [0 = falsy]
+            {props.reviews.length ? ( //greater than 0? [0 = falsy]
                 <div className="limited-row">
-                    {props.drivers.map(item => (
-                        <DriverCard key={item.id} driver={item} history={props.history} getDriver={props.getDriver} />
+                    {props.reviews.map(item => (
+                        <ReviewCard key={item.id} review={item} history={props.history} />
                     ))}
                 </div>
             ) : (
-                <div>No Drivers Found</div>
+                <div>You Haven't Made Any Reviews</div>
             )}
         </div>
     );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         isLoading: state.driversReducer.isLoading,
         drivers: state.driversReducer.drivers,
         reviews: state.driversReducer.reviews,
+        // token: state.driverReducer.token,
         error: state.driversReducer.error
     };
 };
 
 export default connect(
     mapStateToProps,
-    {  loginDriver,
-        loginUser, getDrivers, editDriver, deleteDriver }
-)(DriverList);
+    {  loginDriver, loginUser, getDrivers, editDriver, deleteDriver }
+)(ReviewList);
