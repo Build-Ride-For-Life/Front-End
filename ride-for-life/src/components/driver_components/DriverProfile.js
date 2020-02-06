@@ -12,6 +12,8 @@ From here drivers can choose to:
 import React, {useState} from 'react';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
+
 import {
     deleteDriver,
     editDriver,
@@ -28,6 +30,7 @@ const DriverProfile = (props) => {
         drivers_email, drivers_price, about_me} = props.driver;
 
     const method = () => {
+        localStorage.setItem("token", props.token);
         axiosWithAuth().get('drivers')
             .then((res) => {
                 console.log("success:");
@@ -57,7 +60,7 @@ const DriverProfile = (props) => {
             {props.reviews.length > 0 && <p>{props.reviews[0].review_text}</p>} {/*Map the first three*/}
             {props.reviews.length > 1 && <p>{props.reviews[1].review_text}</p>}
             {props.reviews.length > 2 && <p>{props.reviews[2].review_text}</p>}
-            <h6>Edit Profile</h6> {/*Clickable*/}
+            <Link to="/driveredit"><h6>Edit Profile</h6></Link> {/*Clickable*/}
             <button onClick={logout}>Logout</button>
         </div>
     )
@@ -68,6 +71,7 @@ const mapStateToProps = state => {
         isLoading: state.driverReducer.isLoading,
         driver: state.driverReducer.driver,
         reviews: state.driverReducer.reviews,
+        token: state.driverReducer.token,
         error: state.driverReducer.error
     };
 };

@@ -24,11 +24,11 @@ const Activity = (props) => {
                 <Switch>
                     <PrivateRoute path='/driver' component={DriverProfile} />
                     <PrivateRoute path='/user' component={UserDashboard} />
+                    <PrivateRoute path="/driveredit" component={EditDriverProfile} />
                     <Route path="/userlogin" component={UserLogin} />
                     <Route path="/driverlogin" component={DriverLogin} />
                     <Route path="/usersignup" component={UserOnboarding} />
                     <Route path="/driversignup" component={DriverOnboarding} />
-                    <Route path="/driveredit" component={EditDriverProfile} />
                     <Route component={Home} /> {/*If no other path has been met, will default route to Home*/}
                 </Switch>
             </div>

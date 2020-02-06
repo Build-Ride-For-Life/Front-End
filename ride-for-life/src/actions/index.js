@@ -3,10 +3,10 @@ import {axiosWithAuth} from "../utils/axiosWithAuth";
 
 export const API_START = 'API_START';
 export const API_SUCCESS = 'API_SUCCESS';
+export const TOKEN_SUCCESS = 'TOKEN_SUCCESS';
 export const DRIVER_SUCCESS = 'DRIVER_SUCCESS';
 export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
 export const API_FAILURE = 'API_FAILURE';
-export const EDIT_DRIVER = 'EDIT_DRIVER';
 export const REMOVE_DRIVER = 'REMOVE_DRIVER';
 
 export const loginDriver = (credentials, page) => dispatch => {
@@ -16,6 +16,7 @@ export const loginDriver = (credentials, page) => dispatch => {
         .then(res => {
             console.log(res);
             localStorage.setItem("token", res.data["token"]);
+            dispatch({type: TOKEN_SUCCESS, payload: res.data["token"]})
             return axiosWithAuth().get(`drivers/${res.data["id"]}`) //because only id & token are returned
         })
         .then((res) => {
@@ -31,6 +32,32 @@ export const loginDriver = (credentials, page) => dispatch => {
         .catch(err => {
             dispatch({ type: API_FAILURE, payload: err.response });
         });
+};
+
+export const editDriver = (driverID, updatedData) => dispatch => {
+    dispatch({type: API_START});
+    axiosWithAuth().put(`drivers/${driverID}`, updatedData)
+        .then(res => {
+            console.log(res);
+            dispatch({ type: DRIVER_SUCCESS, payload: res.data });
+        })
+        .catch(err => {
+            dispatch({ type: API_FAILURE, payload: err.response });
+        })
+};
+
+export const deleteDriver = (driverID, page) => dispatch => {
+    dispatch({type: API_START});
+    axiosWithAuth().delete(`drivers/${driverID}`)
+        .then(res => {
+            console.log("deleted:", res);
+            localStorage.clear();
+            console.log(localStorage.getItem('token'));
+            page.push("/driverlogin");
+        })
+        .catch(err => {
+            dispatch({ type: API_FAILURE, payload: err.response });
+        })
 };
 
 export const loginUser = (credentials, page) => dispatch => {
@@ -74,31 +101,5 @@ export const getReviews = (driverID) => dispatch => {
         })
         .catch((err) => {
             dispatch({ type: API_FAILURE, payload: err.response });
-        })
-};
-
-export const editDriver = (driverID) => {
-    return { type: EDIT_DRIVER, payload: driverID };
-    axiosWithAuth().put(`drivers/${driverID}`)
-        .then((res) => {
-            console.log("success:");
-            console.log(res);
-            localStorage.setItem('token', res.data["token"]);
-        })
-        .catch((err) => {
-            // dispatch({ type: API_FAILURE, payload: err.response });
-        })
-};
-
-export const deleteDriver = (driverID) => {
-    return { type: REMOVE_DRIVER, payload: driverID };
-    axiosWithAuth().delete(`drivers/${driverID}`)
-        .then((res) => {
-            console.log("success:");
-            console.log(res);
-            localStorage.setItem('token', res.data["token"]);
-        })
-        .catch((err) => {
-            // dispatch({ type: API_FAILURE, payload: err.response });
         })
 };
