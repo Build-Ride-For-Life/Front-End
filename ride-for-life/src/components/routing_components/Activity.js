@@ -16,6 +16,9 @@ import UserLogin from "../user_components/acct_entry_components/UserLogin";
 import DriverOnboarding from "../driver_components/acct_entry_components/DriverOnboarding";
 import UserOnboarding from "../user_components/acct_entry_components/UserOnboarding";
 import EditDriverProfile from "../driver_components/EditDriverProfile"
+import DriversList from "../user_components/DriversList"
+import DriverDetails from "../user_components/stretch_components/DriverDetails"
+import ReviewList from "../driver_components/ReviewList"
 
 const Activity = (props) => {
     return (
@@ -25,6 +28,9 @@ const Activity = (props) => {
                     <PrivateRoute path='/driver' component={DriverProfile} />
                     <PrivateRoute path='/user' component={UserDashboard} />
                     <PrivateRoute path="/driveredit" component={EditDriverProfile} />
+                    <PrivateRoute path="/driverslist" component={DriversList} />
+                    <PrivateRoute path="/reviews" component={ReviewList} />
+                    <PrivateRoute path="/drivers/:id" component={DriverDetails} />
                     <Route path="/userlogin" component={UserLogin} />
                     <Route path="/driverlogin" component={DriverLogin} />
                     <Route path="/usersignup" component={UserOnboarding} />

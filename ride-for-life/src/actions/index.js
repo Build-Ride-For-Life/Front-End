@@ -7,7 +7,6 @@ export const TOKEN_SUCCESS = 'TOKEN_SUCCESS';
 export const DRIVER_SUCCESS = 'DRIVER_SUCCESS';
 export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
 export const API_FAILURE = 'API_FAILURE';
-export const REMOVE_DRIVER = 'REMOVE_DRIVER';
 
 export const loginDriver = (credentials, page) => dispatch => {
     dispatch({type: API_START});
@@ -73,18 +72,16 @@ export const loginUser = (credentials, page) => dispatch => {
         });
 };
 
-export const getDrivers = () => dispatch => {
+export const getDrivers = (page) => dispatch => {
     dispatch({type: API_START});
     axiosWithAuth().get('drivers')
         .then((res) => {
-            console.log("success:");
-            console.log(res);
-            localStorage.setItem('token', res.data["token"]);
+            dispatch({ type: API_SUCCESS, payload: res.data });
+            page.push("/driverslist");
         })
         .catch((err) => {
             dispatch({ type: API_FAILURE, payload: err.response });
         })
-
 };
 
 export const getDriver = (driverID) => dispatch => {
