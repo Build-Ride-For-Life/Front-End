@@ -1,4 +1,5 @@
-import {API_START, API_SUCCESS, API_FAILURE, REMOVE_DRIVER } from "../actions";
+import {API_START, API_SUCCESS, API_FAILURE } from "../actions";
+import { REHYDRATE } from 'redux-persist';
 // api/drivers/:id
 const initialState = {
     isLoading: false,
@@ -43,14 +44,32 @@ const initialState = {
 
 export const driversReducer = (state = initialState, action) => {
     switch (action.type) {
+        case REHYDRATE:
+            if (action.payload) {
+                return {
+                    ...state,
+                    drivers: action.payload.driversReducer.driver,
+                    token: action.payload.driversReducer.token
+                };
+            } else {
+                return state;
+            }
         case API_START:
-            return state;
+            return {
+                ...state,
+                isLoading: true
+            };
         case API_SUCCESS:
-            return state;
+            return {
+                ...state,
+                drivers: action.payload
+            };
         case API_FAILURE:
-            return state;
-        case REMOVE_DRIVER:
-            return state;
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            };
         default:
             return state;
     }

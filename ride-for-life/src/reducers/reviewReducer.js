@@ -1,4 +1,4 @@
-import {API_START, API_SUCCESS, API_FAILURE, REMOVE_DRIVER } from "../actions";
+import {API_START, API_SUCCESS, API_FAILURE } from "../actions";
 // api/drivers/:id/reviews
 const initialState = {
     isLoading: false,
@@ -32,8 +32,6 @@ export const reviewReducer = (state = initialState, action) => {
         case API_SUCCESS:
             return state;
         case API_FAILURE:
-            return state;
-        case REMOVE_DRIVER:
             return state;
         default:
             return state;
