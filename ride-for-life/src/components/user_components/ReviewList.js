@@ -1,13 +1,3 @@
-/*
-PROTECTED ROUTE
-
-- View (GET) all of their reviews
-    - /api/drivers/:id/reviews
-    - Extra/Stretch?
-        - View (GET) a users profile page (who gave them a review)
-            - Endpoint: /api/users/:id
- */
-
 import React from 'react';
 
 import ReviewCard from './ReviewCard';
@@ -24,7 +14,7 @@ const ReviewList = props => {
                     ))}
                 </div>
             ) : (
-                <div>You Don't Have Any Reviews</div>
+                <div>You Haven't Made Any Reviews</div>
             )}
         </div>
     );
@@ -32,9 +22,9 @@ const ReviewList = props => {
 
 const mapStateToProps = state => {
     return {
-        isLoading: state.driverReducer.isLoading,
-        driver: state.driverReducer.driver,
-        reviews: state.driverReducer.reviews,
+        isLoading: state.driversReducer.isLoading,
+        driver: state.driversReducer.driver,
+        reviews: state.driversReducer.reviews,
         // token: state.driverReducer.token,
         error: state.driverReducer.error
     };
@@ -42,6 +32,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    {  loginDriver,
-        loginUser, getDrivers, editDriver, deleteDriver }
+    {  loginDriver, loginUser, getDrivers, editDriver, deleteDriver }
 )(ReviewList);

@@ -5,9 +5,7 @@ import {connect} from "react-redux";
 import {
     deleteDriver,
     editDriver,
-    getDriver,
     getDrivers,
-    getReviews,
     loginDriver,
     loginUser
 } from "../../../actions";
@@ -55,6 +53,5 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps,
     {  loginDriver,
-        loginUser, getDrivers, getDriver,
-        getReviews, editDriver, deleteDriver }
+        loginUser, getDrivers, editDriver, deleteDriver }
 )(UserLogin);

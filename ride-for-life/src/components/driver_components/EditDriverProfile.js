@@ -24,11 +24,11 @@ function EditDriverProfile(props) {
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
-        localStorage.setItem("token", props.token);
+        // localStorage.setItem("token", props.token);
         props.editDriver(props.driver.id, data)
     };
     const deleteDriver = () => {
-        localStorage.setItem("token", props.token);
+        // localStorage.setItem("token", props.token);
         props.deleteDriver(props.driver.id, props.history);
     };
 
@@ -69,7 +69,7 @@ const mapStateToProps = state => {
         isLoading: state.driverReducer.isLoading,
         driver: state.driverReducer.driver,
         reviews: state.driverReducer.reviews,
-        token: state.driverReducer.token,
+        // token: state.driverReducer.token,
         error: state.driverReducer.error
     };
 };

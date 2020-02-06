@@ -17,9 +17,7 @@ import {Link} from "react-router-dom";
 import {
     deleteDriver,
     editDriver,
-    getDriver,
     getDrivers,
-    getReviews,
     loginDriver,
     loginUser
 } from "../../actions";
@@ -42,7 +40,7 @@ const DriverProfile = (props) => {
             <h6>{drivers_plot}</h6> <h6>{drivers_price}</h6>
             <h2>About {drivers_name}</h2>
             <p>{about_me}</p>
-            <h4>Reviews</h4> <Link to="reviews"><h5>See all {props.reviews.length} Review(s)</h5></Link> {/*h5 -> Clickable*/}
+            <h4>Reviews</h4> <Link to="driverreviews"><h5>See all {props.reviews.length} Review(s)</h5></Link> {/*h5 -> Clickable*/}
             {props.reviews.length > 0 && <p>{props.reviews[0].review_text}</p>} {/*Map the first three*/}
             {props.reviews.length > 1 && <p>{props.reviews[1].review_text}</p>}
             {props.reviews.length > 2 && <p>{props.reviews[2].review_text}</p>}
@@ -65,6 +63,5 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     {  loginDriver,
-        loginUser, getDrivers, getDriver,
-        getReviews, editDriver, deleteDriver }
+        loginUser, getDrivers, editDriver, deleteDriver }
 )(DriverProfile);

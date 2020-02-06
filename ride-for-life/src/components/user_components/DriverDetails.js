@@ -12,19 +12,17 @@ From here drivers can choose to:
  */
 
 import React, {useState} from 'react';
-import {axiosWithAuth} from "../../../utils/axiosWithAuth";
+import {axiosWithAuth} from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
 import {
     deleteDriver,
     editDriver,
-    getDriver,
     getDrivers,
-    getReviews,
     loginDriver,
     loginUser
-} from "../../../actions";
+} from "../../actions";
 
 const DriverDetails = (props) => {
 
@@ -39,7 +37,7 @@ const DriverDetails = (props) => {
             <h5>Location: {drivers_plot}</h5> <h5>Address: {drivers_price}</h5>
             <h5>Phone: {drivers_phone_number}</h5> <h5>Email: {drivers_email}</h5>
             <h5>About Me: {about_me}</h5>
-            <Link to="reviews"><h4>See all of {drivers_name}'s Reviews</h4></Link>
+            <Link to={`newreview/${props.match.params.id}`}><h4>Leave {drivers_name} a Review</h4></Link>
         </div>
     )
 };
@@ -47,8 +45,9 @@ const DriverDetails = (props) => {
 const mapStateToProps = state => {
     return {
         isLoading: state.driversReducer.isLoading,
+        user: state.driversReducer.user,
         drivers: state.driversReducer.drivers,
-        token: state.driversReducer.token,
+        reviews: state.driversReducer.reviews,
         error: state.driversReducer.error
     };
 };
@@ -56,6 +55,5 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     {  loginDriver,
-        loginUser, getDrivers, getDriver,
-        getReviews, editDriver, deleteDriver }
+        loginUser, getDrivers, editDriver, deleteDriver }
 )(DriverDetails);

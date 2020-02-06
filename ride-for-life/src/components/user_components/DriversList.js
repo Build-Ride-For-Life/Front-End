@@ -2,7 +2,7 @@ import React from 'react';
 
 import DriverCard from './DriverCard';
 import {connect} from "react-redux";
-import {deleteDriver, editDriver, getDriver, getDrivers, getReviews, loginDriver, loginUser} from "../../actions";
+import {deleteDriver, editDriver, getDrivers, loginDriver, loginUser} from "../../actions";
 
 const DriverList = props => {
     return (
@@ -32,6 +32,5 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps,
     {  loginDriver,
-        loginUser, getDrivers, getDriver,
-        getReviews, editDriver, deleteDriver }
+        loginUser, getDrivers, editDriver, deleteDriver }
 )(DriverList);
