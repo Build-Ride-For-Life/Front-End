@@ -1,4 +1,4 @@
-import {API_START, API_SUCCESS, DRIVER_SUCCESS,
+import {API_START, API_SUCCESS, TOKEN_SUCCESS, DRIVER_SUCCESS,
     REVIEW_SUCCESS, API_FAILURE, EDIT_DRIVER, REMOVE_DRIVER } from "../actions";
 import { REHYDRATE } from 'redux-persist';
 
@@ -57,6 +57,7 @@ const initialState = {
             driver_id: 3
         },
     ],
+    token: null,
     error: ''
 };
 
@@ -67,7 +68,8 @@ export const driverReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     driver: action.payload.driverReducer.driver,
-                    reviews: action.payload.driverReducer.reviews
+                    reviews: action.payload.driverReducer.reviews,
+                    token: action.payload.driverReducer.token
                 };
             } else {
                 return state;
@@ -76,6 +78,11 @@ export const driverReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: true
+            };
+        case TOKEN_SUCCESS:
+            return {
+                ...state,
+                token: action.payload
             };
         case DRIVER_SUCCESS:
             return {

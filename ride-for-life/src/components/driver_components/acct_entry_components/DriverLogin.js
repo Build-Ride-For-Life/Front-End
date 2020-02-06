@@ -47,6 +47,8 @@ const mapStateToProps = (state) => {
     return {
         isLoading: state.driverReducer.isLoading,
         driver: state.driverReducer.driver,
+        reviews: state.driverReducer.reviews,
+        token: state.driverReducer.token,
         error: state.driverReducer.error
     };
 };

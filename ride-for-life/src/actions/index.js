@@ -3,6 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWithAuth";
 
 export const API_START = 'API_START';
 export const API_SUCCESS = 'API_SUCCESS';
+export const TOKEN_SUCCESS = 'TOKEN_SUCCESS';
 export const DRIVER_SUCCESS = 'DRIVER_SUCCESS';
 export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
 export const API_FAILURE = 'API_FAILURE';
@@ -16,6 +17,7 @@ export const loginDriver = (credentials, page) => dispatch => {
         .then(res => {
             console.log(res);
             localStorage.setItem("token", res.data["token"]);
+            dispatch({type: TOKEN_SUCCESS, payload: res.data["token"]})
             return axiosWithAuth().get(`drivers/${res.data["id"]}`) //because only id & token are returned
         })
         .then((res) => {

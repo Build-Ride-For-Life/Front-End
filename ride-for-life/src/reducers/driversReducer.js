@@ -35,8 +35,9 @@ const initialState = {
             drivers_price: 50,
             about_me: "test3",
             role: "driver"
-        }
+        },
     ],
+    token: null,
     error: ''
 };
 
