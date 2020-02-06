@@ -10,10 +10,14 @@ import logger from 'redux-logger';
 import { persistStore, persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from "redux-persist/integration/react";
+//alert
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 //custom
 import rootReducer from './reducers';
 import App from './App';
 import './index.css';
+
 
 //configureStore
 const persistConfig = {
@@ -29,11 +33,22 @@ const persistor = persistStore(store);
 
 // export default {store, persistor};
 
+const options = {
+    
+    position: positions.BOTTOM_CENTER,
+    timeout: 3000,
+    offset: '50px',
+    transition: transitions.SCALE
+}
+
+// Option effect for AlertProvider
 
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+        <AlertProvider template={AlertTemplate} {...options}>
             <App />
+        </AlertProvider>
         </PersistGate>
     </Provider>,
     document.getElementById('root')
