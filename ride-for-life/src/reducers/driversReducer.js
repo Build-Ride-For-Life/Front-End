@@ -48,7 +48,7 @@ export const driversReducer = (state = initialState, action) => {
             if (action.payload) {
                 return {
                     ...state,
-                    drivers: action.payload.driversReducer.driver,
+                    drivers: action.payload.driversReducer.drivers,
                     token: action.payload.driversReducer.token
                 };
             } else {

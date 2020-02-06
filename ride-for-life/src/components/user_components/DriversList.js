@@ -10,7 +10,7 @@ const DriverList = props => {
             {props.drivers.length ? ( //greater than 0? [0 = falsy]
                 <div className="limited-row">
                     {props.drivers.map(item => (
-                        <DriverCard key={item.id} driver={item} getDriver={props.getDriver} />
+                        <DriverCard key={item.id} driver={item} history={props.history} getDriver={props.getDriver} />
                     ))}
                 </div>
             ) : (
