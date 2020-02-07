@@ -78,7 +78,7 @@ function EditDriverProfile(props) {
                     <button onClick={deleteDriver} style={{width: `38%`, padding: `4% 0%`, background: `rgb(182, 194, 170`, border: `3px solid`}}>Delete Profile</button>
                 </div>
                 <div>
-                    <Link to="/driver" style={{width: `38%`, padding: `4% 0%`, background: `rgb(182, 194, 170`, border: `3px solid`}}><button>Back to Profile</button></Link>
+                    <Link to="/driver"><button style={{width: `38%`, padding: `4% 0%`, background: `rgb(182, 194, 170`, border: `3px solid`}}>Back to Profile</button></Link>
                 </div>
                 </DriverEdit>
         </div>

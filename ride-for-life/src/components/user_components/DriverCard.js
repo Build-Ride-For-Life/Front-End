@@ -1,8 +1,6 @@
 import React from 'react';
 import { useAlert } from 'react-alert'
 
-
-
 const DriverCard = props => {
 
     const moreDetails = () => {

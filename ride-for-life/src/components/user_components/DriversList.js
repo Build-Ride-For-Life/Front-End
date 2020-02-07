@@ -3,16 +3,22 @@ import React from 'react';
 import DriverCard from './DriverCard';
 import {connect} from "react-redux";
 import {deleteDriver, editDriver, getDrivers, loginDriver, loginUser} from "../../actions";
+import styled from 'styled-components'
+
+const CardContainer = styled.div`
+background:rgb(228, 217, 197);
+padding: 3.4%;
+`
 
 const DriverList = props => {
     return (
         <div className="container">
             {props.drivers.length ? ( //greater than 0? [0 = falsy]
-                <div className="limited-row">
+                <CardContainer className="limited-row">
                     {props.drivers.map(item => (
                         <DriverCard key={item.id} driver={item} history={props.history} getDriver={props.getDriver} />
                     ))}
-                </div>
+                </CardContainer>
             ) : (
                 <div>No Drivers Found</div>
             )}
