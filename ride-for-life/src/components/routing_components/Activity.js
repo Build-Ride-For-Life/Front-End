@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import Loader from 'react-loader-spinner';
 
 import { getDrivers,
     loginDriver, loginUser, editDriver, deleteDriver } from '../../actions';

@@ -1,6 +1,6 @@
 /* Stretch Feature */
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
@@ -9,17 +9,24 @@ import {Link} from "react-router-dom";
 
 function EditReview(props) {
 
-    const {id, reviewer, review_date, rating,
-        review_text, user_id, driver_id} = props.reviews.filter(review => review['id'].toString() === props.match.params.id)[0];
+    const [storedReviews, setStoredReviews] = useState(props.reviews);
+    /*const {id, reviewer, review_date, rating,
+        review_text, user_id, driver_id} = props.reviews.filter(review => review['id'].toString() === props.match.params.id)[0];*/
+
+    const review = storedReviews.find(review => review['id'].toString() === props.match.params.id);
+
+    useEffect(() => {
+
+    }, [storedReviews]);
 
     const { register, handleSubmit, errors } = useForm();
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     const onSubmit = data => {
         console.log(data);
-        props.editReview(id, data)
+        props.editReview(review['id'], data)
     };
     const deleteReview = () => {
-        props.deleteReview(id, props.history);
+        props.deleteReview(review['id'], props.history);
     };
 
     const validateData = async (value) => {};
@@ -30,10 +37,10 @@ function EditReview(props) {
                 <h1>Edit Review</h1>
 
                 <label>Rating (1-5):</label>
-                <input name="rating" defaultValue={rating} type="number" ref={register({ required: true })} />
+                <input name="rating" defaultValue={review['rating']} type="number" ref={register({ required: true })} />
 
                 <label>Review:</label>
-                <input name="review_text" defaultValue={review_text} type="text" ref={register({ required: true })} />
+                <input name="review_text" defaultValue={review['review_text']} type="text" ref={register({ required: true })} />
 
                 <button type="submit">Edit Review</button>
             </form>

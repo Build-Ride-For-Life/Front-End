@@ -30,6 +30,11 @@ const UserDashboard = (props) => {
         props.history.push("/userlogin");
     };
 
+    const drivers = () => {
+        console.log(props.drivers);
+        console.log(props.reviews);
+    };
+
     const getDrivers = () => {
         props.getDrivers(props.history);
     };
@@ -39,6 +44,7 @@ const UserDashboard = (props) => {
             <button onClick={getDrivers}>Search for Drivers</button> {/*Clickable --> Shows DriversList.js*/}
             <Link to="/userreviews"><h5>Your Review(s)</h5></Link> {/*h5 -> Clickable*/}
             <button onClick={logout}>Logout</button>
+            <button onClick={drivers}>Drivers?</button>
         </div>
     )
 };
