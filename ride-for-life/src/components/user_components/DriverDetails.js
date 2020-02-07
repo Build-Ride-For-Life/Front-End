@@ -15,6 +15,7 @@ import React, {useState} from 'react';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import styled from 'styled-components';
 
 import {
     deleteDriver,
@@ -23,6 +24,14 @@ import {
     loginDriver,
     loginUser
 } from "../../actions";
+
+const DetailsContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+background: rgb(228, 217, 197);
+padding: 9.2%;
+`
 
 const DriverDetails = (props) => {
 
@@ -34,13 +43,13 @@ const DriverDetails = (props) => {
     };*/
 
     return (
-        <div>
+        <DetailsContainer>
             <h1>Name: {drivers_name}</h1>
             <h5>Location: {drivers_plot}</h5> <h5>Address: {drivers_price}</h5>
             <h5>Phone: {drivers_phone_number}</h5> <h5>Email: {drivers_email}</h5>
             <h5>About Me: {about_me}</h5>
             <Link to={`/newreview/${props.match.params.id}`}><h4>Leave {drivers_name} a Review</h4></Link>
-        </div>
+        </DetailsContainer>
     )
 };
 

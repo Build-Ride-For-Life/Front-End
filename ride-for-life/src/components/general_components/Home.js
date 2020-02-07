@@ -3,7 +3,6 @@ import {axiosWithAuth} from "../../utils/axiosWithAuth";
 import axios from 'axios'
 import {Link} from "react-router-dom";
 import styled from "styled-components"
-import Navigation from "./Navigation"
 
 const HomeContainer = styled.div`
 display: flex;
@@ -34,18 +33,17 @@ border-radius: 4%;
 export default function Home() {
     return(
         <div>
-            <Navigation />
             <HomeContainer>
-                <LinkSpan className="driver-board" style={{border: 5, borderRightStyle: "dotted", borderColor: "black"}}>
-                    <LinkDiv>
-                        <Link className="main-buttons" to={"/driverlogin"} style={{padding: "6%"}}>Driver Login</Link>
-                        <Link className="main-buttons" to={"/driversignup"}>Driver Signup</Link>
+                <LinkSpan className="driver-board" style={{border: 5, borderRightStyle: "dotted", borderColor: "black", padding:`11.2% 8%`}}>
+                    <LinkDiv style={{padding:`20% 0% 19%`}}>
+                        <Link className="main-buttons" to={"/driverlogin"} style={{padding: "2%", background:`rgb(145, 114, 96)`, width: "30%", margin:"1% auto"}}>Driver Login</Link>
+                        <Link className="main-buttons" to={"/driversignup"} style={{padding: "2%", background:`rgb(145, 114, 96)`, width: "40%", margin:"1% auto"}}>Driver Signup</Link>
                     </LinkDiv>
                 </LinkSpan>
                 <LinkSpan className="user-board">
                     <LinkDiv>
-                        <Link className="main-buttons" to={"/userlogin"} style={{padding: "6%"}}>User Login</Link>
-                        <Link className="main-buttons" to={"/usersignup"}>User Signup</Link>
+                        <Link className="main-buttons" to={"/userlogin"} style={{padding: "2%", background:`rgb(145, 114, 96)`, width: "30%", margin:"1% auto"}}>User Login</Link>
+                        <Link className="main-buttons" to={"/usersignup"} style={{padding: "2%", background:`rgb(145, 114, 96)`, width: "30%", margin:"1% auto"}}>User Signup</Link>
                     </LinkDiv>
                 </LinkSpan>
             </HomeContainer>

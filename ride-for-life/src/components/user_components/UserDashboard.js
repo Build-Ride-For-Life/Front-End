@@ -22,6 +22,15 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {deleteDriver, editDriver, getDrivers, loginDriver, loginUser} from "../../actions";
+import styled from "styled-components"
+
+const DashboardContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+background:rgb(228, 217, 197);
+padding: 18.7%;
+`;
 
 const UserDashboard = (props) => {
 
@@ -40,12 +49,12 @@ const UserDashboard = (props) => {
     };
 
     return (
-        <div>
+        <DashboardContainer>
             <button onClick={getDrivers}>Search for Drivers</button> {/*Clickable --> Shows DriversList.js*/}
             <Link to="/userreviews"><h5>Your Review(s)</h5></Link> {/*h5 -> Clickable*/}
             <button onClick={logout}>Logout</button>
             <button onClick={drivers}>Drivers?</button>
-        </div>
+        </DashboardContainer>
     )
 };
 

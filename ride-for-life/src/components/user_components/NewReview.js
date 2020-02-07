@@ -6,6 +6,16 @@ import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import { createReview } from "../../actions";
 import {Link} from "react-router-dom";
+import styled from "styled-components"
+
+const ReviewForm = styled.form`
+display: flex;
+flex-direction: column;
+width: 31%;
+flex-wrap: wrap;
+margin: 9% auto 0%;
+background: rgb(88, 110, 107);
+`;
 
 function NewReview(props) {
 
@@ -30,18 +40,25 @@ function NewReview(props) {
 
     return (
         <div>
-            <form className="ReviewCreate" onSubmit={handleSubmit(onSubmit)}>
-                <h1>New Review</h1>
-
+            <ReviewForm style={{border: `3px solid`}} className="ReviewCreate" onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                <h1 style={{margin: `0% 0% 5%`, border: `3px solid`}}>New Review</h1>
+                </div>
+                <div style={{margin:`0% 7% 0% 0%`}}>
                 <label>Rating (1-5):</label>
-                <input name="rating" type="number" ref={register({ required: true })} />
-
+                <input name="rating" type="number" style={{border:`3px solid`, padding:`0% 0% 0% 4%`}} ref={register({ required: true })} />
+                </div>
+                <div style={{margin:`0% 0% 3%`}}>
                 <label>Review:</label>
-                <input name="review_text" type="text" ref={register({ required: true })} />
-
-                <button type="submit">Submit Review</button>
-            </form>
-            <Link to="/user"><button>Back to Profile</button></Link>
+                <input name="review_text" type="text" style={{border:`3px solid`}} ref={register({ required: true })} />
+                </div>
+                <div style={{margin: `0% 0% 6%`}}>
+                <button type="submit" style={{width: `38%`, padding: `4% 0%`, background: `rgb(182, 194, 170`, border: `3px solid`}}>Submit Review</button>
+                </div>
+                <div>
+                <Link to="/user"><button style={{width: `38%`, padding: `4% 0%`, background: `rgb(182, 194, 170`, border: `3px solid`}}>Back to Driver List</button></Link>
+                </div>
+            </ReviewForm>
         </div>
     )
 }

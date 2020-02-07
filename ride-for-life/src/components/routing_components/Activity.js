@@ -8,6 +8,7 @@ import { getDrivers,
 //General Components
 import PrivateRoute from './PrivateRoute'
 import Home from "../general_components/Home";
+import Navigation from "../general_components/Navigation";
 //Driver Components
 import DriverOnboarding from "../driver_components/acct_entry_components/DriverOnboarding";
 import DriverLogin from "../driver_components/acct_entry_components/DriverLogin";
@@ -28,6 +29,7 @@ const Activity = (props) => {
     return (
         <Router>
             <div>
+                <Navigation />
                 <Switch>
                     {/*Driver Routes*/}
                     <Route path="/driversignup" component={DriverOnboarding} />

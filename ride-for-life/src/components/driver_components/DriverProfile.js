@@ -13,6 +13,7 @@ import React, {useState} from 'react';
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import styled from "styled-components"
 
 import {
     deleteDriver,
@@ -21,6 +22,14 @@ import {
     loginDriver,
     loginUser
 } from "../../actions";
+
+const ProfileContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+background: rgb(228, 217, 197);
+padding: 7% 0%;
+`
 
 const DriverProfile = (props) => {
 
@@ -35,18 +44,18 @@ const DriverProfile = (props) => {
     const [] = useState();
 
     return (
-        <div>
-            <h1>{drivers_name}</h1>
-            <h6>{drivers_plot}</h6> <h6>{drivers_price}</h6>
+        <ProfileContainer>
+            <h2>Driver: {drivers_name}</h2>
+            <h6>Address: {drivers_plot}</h6> <h6>Price Per Kilometer: {drivers_price}</h6>
             <h2>About {drivers_name}</h2>
-            <p>{about_me}</p>
+            <p>"{about_me}"</p>
             <h4>Reviews</h4> <Link to="driverreviews"><h5>See all {props.reviews.length} Review(s)</h5></Link> {/*h5 -> Clickable*/}
             {props.reviews.length > 0 && <p>{props.reviews[0].review_text}</p>} {/*Map the first three*/}
             {props.reviews.length > 1 && <p>{props.reviews[1].review_text}</p>}
             {props.reviews.length > 2 && <p>{props.reviews[2].review_text}</p>}
             <Link to="/driveredit"><h6>Edit Profile</h6></Link> {/*Clickable*/}
             <button onClick={logout}>Logout</button>
-        </div>
+        </ProfileContainer>
     )
 };
 

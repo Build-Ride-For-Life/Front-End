@@ -13,10 +13,16 @@ import React from 'react';
 import ReviewCard from './ReviewCard';
 import {connect} from "react-redux";
 import {deleteDriver, editDriver, getDrivers, loginDriver, loginUser} from "../../actions";
+import styled from 'styled-components'
+
+const ReviewContainer = styled.div`
+background:rgb(228, 217, 197);
+padding: 17%;
+`
 
 const ReviewList = props => {
     return (
-        <div className="container">
+        <ReviewContainer className="container">
             {props.reviews.length ? ( //greater than 0? [0 = falsy]
                 <div className="limited-row">
                     {props.reviews.map(item => (
@@ -26,7 +32,7 @@ const ReviewList = props => {
             ) : (
                 <div>You Don't Have Any Reviews</div>
             )}
-        </div>
+        </ReviewContainer>
     );
 };
 
