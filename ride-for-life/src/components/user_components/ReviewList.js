@@ -10,7 +10,7 @@ const ReviewList = props => {
             {props.reviews.length ? ( //greater than 0? [0 = falsy]
                 <div className="limited-row">
                     {props.reviews.map(item => (
-                        <ReviewCard key={item.id} review={item} history={props.history} />
+                        <ReviewCard key={item.id} review={item} driver={(props.drivers.find(driver => driver['id'] === item.driver_id))} history={props.history} />
                     ))}
                 </div>
             ) : (
