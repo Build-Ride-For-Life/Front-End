@@ -17,7 +17,7 @@ import styled from 'styled-components'
 
 const ReviewContainer = styled.div`
 background:rgb(228, 217, 197);
-padding: 21.8%;
+padding: 17%;
 `
 
 const ReviewList = props => {
