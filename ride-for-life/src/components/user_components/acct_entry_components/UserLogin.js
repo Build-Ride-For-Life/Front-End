@@ -10,7 +10,6 @@ import {
     loginUser
 } from "../../../actions";
 import styled from "styled-components"
-import Navigation from "../../general_components/Navigation"
 import Loader from 'react-loader-spinner';
 
 const UserForm = styled.form`
@@ -34,7 +33,6 @@ function UserLogin(props) {
 
     return (
         <div>
-            <Navigation />
             {props.isLoading ?
                 (<Loader
                     type="CradeLoader"

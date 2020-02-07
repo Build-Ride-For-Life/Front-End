@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 import { axiosWithAuth } from "../../../utils/axiosWithAuth";
-import Navigation from "../../general_components/Navigation"
 import styled from "styled-components"
 import Loader from "../../driver_components/acct_entry_components/DriverOnboarding";
 
@@ -37,7 +36,6 @@ export default function UserOnboarding(props) {
 
     return (
         <div>
-            <Navigation />
             {isLoading ?
                 (<Loader
                     type="CradeLoader"
